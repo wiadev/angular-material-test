@@ -1,0 +1,26 @@
+<div layout="vertical" layout-fill>
+
+  <md-content>
+    <header>
+      <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </header>
+
+    <div class="techs" layout-align="center">   
+        <md-list ng-cloak>
+          <md-subheader class="md-no-sticky">
+              <md-input-container md-no-float class="md-block" flex-gt-sm>
+                  <input ng-model="main.newName" placeholder="Name">
+              </md-input-container>
+              <md-button class="md-raised md-primary" ng-click="main.add_record()">Add</md-button>
+              <md-button class="md-raised md-primary" ng-click="main.update_record()">update</md-button>
+              <md-button class="md-raised md-warn" ng-click="main.remove_record()">Delete</md-button>
+          </md-subheader>
+          <md-list-item ng-repeat="topping in main.toppings" ng-click="main.selectTopping($index)">
+            <p> {{ topping.name }} </p>
+            <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+          </md-list-item>
+        </md-list>
+    </div>
+  </md-content>
+
+</div>
